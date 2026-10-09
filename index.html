@@ -26,6 +26,25 @@
         .contact-btn:hover {
             transform: translateY(-3px);
         }
+        
+        /* Styl wymuszający idealną wysokość na komputerach */
+        @media (min-width: 992px) {
+            .content-box {
+                height: 520px !important;
+            }
+            .fixed-img-height {
+                height: 520px !important;
+                object-fit: cover;
+            }
+        }
+
+        /* Styl dla mniejszych urządzeń */
+        @media (max-width: 991.98px) {
+            .fixed-img-height {
+                height: 350px !important;
+                object-fit: cover;
+            }
+        }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -44,7 +63,7 @@
     <main class="container my-5 flex-grow-1">
         
         <!-- Sekcja z opisem i zdjęciem -->
-        <div class="row g-0 bg-white rounded-4 shadow-sm overflow-hidden align-items-stretch mb-5">
+        <div class="row g-0 bg-white rounded-4 shadow-sm overflow-hidden align-items-stretch mb-5 content-box">
             <!-- Kolumna z tekstem -->
             <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center">
                 <h2 class="mb-4 text-primary fw-bold">Nowoczesne urządzenia tourguide</h2>
@@ -53,34 +72,24 @@
                 </p>
                 
                 <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item bg-transparent px-0 border-bottom d-flex align-items-center py-3">
+                    <li class="list-group-item bg-transparent px-0 border-bottom d-flex align-items-center py-2">
                         <i class="bi bi-battery-full text-primary fs-4 me-3"></i> 
                         <span>Bardzo długi czas pracy (ponad 35 godzin na jednym ładowaniu)</span>
                     </li>
-                    <li class="list-group-item bg-transparent px-0 border-bottom d-flex align-items-center py-3">
+                    <li class="list-group-item bg-transparent px-0 border-bottom d-flex align-items-center py-2">
                         <i class="bi bi-broadcast text-primary fs-4 me-3"></i> 
                         <span>Bardzo duży zasięg (ponad 100 metrów)</span>
                     </li>
-                    <li class="list-group-item bg-transparent px-0 d-flex align-items-center py-3">
+                    <li class="list-group-item bg-transparent px-0 d-flex align-items-center py-2">
                         <i class="bi bi-shield-check text-primary fs-4 me-3"></i> 
                         <span>Urządzenia są na gwarancji</span>
                     </li>
                 </ul>
-
-                <div class="p-4 bg-light border border-primary-subtle rounded-3 mt-auto">
-                    <h5 class="text-primary mb-3 fw-semibold"><i class="bi bi-box-seam me-2"></i>Do każdego zestawu dołączam:</h5>
-                    <div class="d-flex flex-wrap gap-2">
-                        <span class="badge bg-primary py-2 px-3 rounded-pill">Jednorazowe słuchawki</span>
-                        <span class="badge bg-primary py-2 px-3 rounded-pill">Dwa nadajniki</span>
-                        <span class="badge bg-primary py-2 px-3 rounded-pill">Dwa mikrofony</span>
-                        <span class="badge bg-primary py-2 px-3 rounded-pill">Kilka odbiorników zapasowych</span>
-                    </div>
-                </div>
             </div>
 
-            <!-- Kolumna ze zdjęciem -->
+            <!-- Kolumna ze zdjęciem (z dopasowaniem na piksele) -->
             <div class="col-lg-6">
-                <img src="1000017162.jpg" alt="Zestaw urządzeń tourguide w walizce" class="w-100 h-100" style="object-fit: cover; min-height: 400px;">
+                <img src="1000017162.jpg" alt="Zestaw urządzeń tourguide w walizce" class="w-100 h-100 fixed-img-height">
             </div>
         </div>
 
