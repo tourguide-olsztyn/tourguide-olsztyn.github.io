@@ -1,130 +1,198 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourguide Olsztyn - Mariusz Brzózka</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f6f9;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
-            color: white;
-            padding: 80px 0 60px;
-        }
-        .contact-btn {
-            max-width: 350px;
-            width: 100%;
-            transition: transform 0.2s ease-in-out;
-        }
-        .contact-btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        /* Styl wymuszający idealną wysokość na komputerach */
-        @media (min-width: 992px) {
-            .content-box {
-                height: 520px !important;
-            }
-            .fixed-img-height {
-                height: 520px !important;
-                object-fit: cover;
-            }
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tourguide Olsztyn Mariusz Brzózka - Wypożyczalnia Audioprzewodników</title>
 
-        /* Styl dla mniejszych urządzeń */
-        @media (max-width: 991.98px) {
-            .fixed-img-height {
-                height: 350px !important;
-                object-fit: cover;
-            }
-        }
-    </style>
+<!-- Bootstrap 5 CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- Custom styling for aesthetics and smooth scrolling -->
+<style>
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #333;
+}
+/* Custom Blue Palette overrides */
+.bg-primary-custom {
+background: linear-gradient(135deg, #0d6efd 0%, #0043a8 100%);
+}
+.text-primary-custom {
+color: #0d6efd;
+}
+.hero-section {
+padding: 100px 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.section-padding {
+padding: 80px 0;
+}
+.contact-icon {
+font-size: 2rem;
+color: #0d6efd;
+margin-bottom: 15px;
+}
+.card-custom {
+border: none;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+transition: transform 0.3s ease;
+}
+.card-custom:hover {
+transform: translateY(-5px);
+}
+.img-custom {
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(13, 110, 253, 0.15);
+}
+.btn-custom {
+border-radius: 50px;
+padding: 12px 30px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+</style>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="70" tabindex="0">
 
-    <!-- Sekcja Hero -->
-    <header class="hero-section text-center shadow">
-        <div class="container">
-            <i class="bi bi-headset display-1 mb-3"></i>
-            <h1 class="display-4 fw-bold">Tourguide Olsztyn</h1>
-            <p class="fs-2 mb-2">Mariusz Brzózka</p>
-            <p class="fs-5 text-white-50">Profesjonalny wynajem sprzętu słuchawkowego dla przewodników</p>
-        </div>
-    </header>
+<!-- Navbar -->
+<nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#home">
+<i class="bi bi-headset me-2"></i>Tourguide Olsztyn
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Przełącz nawigację">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="#oferta">O nas / Oferta</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#kontakt">Kontakt</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
 
-    <!-- Główna zawartość -->
-    <main class="container my-5 flex-grow-1">
-        
-        <!-- Sekcja z opisem i zdjęciem -->
-        <div class="row g-0 bg-white rounded-4 shadow-sm overflow-hidden align-items-stretch mb-5 content-box">
-            <!-- Kolumna z tekstem -->
-            <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center">
-                <h2 class="mb-4 text-primary fw-bold">Nowoczesne urządzenia tourguide</h2>
-                <p class="lead text-secondary mb-4">
-                    Oferuję do wypożyczenia nowoczesne urządzenia tourguide marki <strong class="text-dark">Okayo WT-300D</strong>.
-                </p>
-                
-                <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item bg-transparent px-0 border-bottom d-flex align-items-center py-2">
-                        <i class="bi bi-battery-full text-primary fs-4 me-3"></i> 
-                        <span>Bardzo długi czas pracy (ponad 35 godzin na jednym ładowaniu)</span>
-                    </li>
-                    <li class="list-group-item bg-transparent px-0 border-bottom d-flex align-items-center py-2">
-                        <i class="bi bi-broadcast text-primary fs-4 me-3"></i> 
-                        <span>Bardzo duży zasięg (ponad 100 metrów)</span>
-                    </li>
-                    <li class="list-group-item bg-transparent px-0 d-flex align-items-center py-2">
-                        <i class="bi bi-shield-check text-primary fs-4 me-3"></i> 
-                        <span>Urządzenia są na gwarancji</span>
-                    </li>
-                </ul>
-            </div>
+<!-- Hero Section -->
+<section id="home" class="hero-section bg-primary-custom text-white text-center">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-10">
+<h1 class="display-4 fw-bold mb-4">Tourguide Olsztyn Mariusz Brzózka</h1>
+<h2 class="h3 fw-light mb-5">Profesjonalna Wypożyczalnia Audioprzewodników</h2>
+<p class="lead mb-5 px-md-5">Zapewnij swoim gościom najwyższą jakość zwiedzania. Nowoczesny sprzęt, niezawodność i krystalicznie czysty dźwięk na każdym kroku.</p>
+<a href="#oferta" class="btn btn-light text-primary btn-lg btn-custom shadow-sm hover-shadow">
+Sprawdź ofertę <i class="bi bi-arrow-down-circle ms-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
 
-            <!-- Kolumna ze zdjęciem (z dopasowaniem na piksele) -->
-            <div class="col-lg-6">
-                <img src="1000017162.jpg" alt="Zestaw urządzeń tourguide w walizce" class="w-100 h-100 fixed-img-height">
-            </div>
-        </div>
+<!-- Oferta / O nas Section -->
+<section id="oferta" class="section-padding bg-light">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="display-6 fw-bold text-primary-custom">Nasza Oferta</h2>
+<div class="mx-auto bg-primary" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+</div>
 
-        <!-- Sekcja Kontaktowa -->
-        <div class="bg-white p-5 rounded-4 shadow-sm text-center">
-            <div class="mb-4">
-                <i class="bi bi-person-lines-fill text-primary display-4 mb-3 d-block"></i>
-                <h3 class="fw-bold text-dark">Skontaktuj się ze mną</h3>
-                <p class="text-secondary">Chcesz zarezerwować sprzęt lub masz pytania? Zadzwoń lub napisz.</p>
-            </div>
-            
-            <div class="d-flex flex-column align-items-center gap-3 mt-4">
-                <a href="tel:+48662122061" class="btn btn-outline-primary btn-lg contact-btn d-flex align-items-center justify-content-center gap-3">
-                    <i class="bi bi-telephone-fill fs-4"></i>
-                    <span class="fs-5 fw-semibold">662 122 061</span>
-                </a>
-                
-                <a href="mailto:tourguide.mariusz@gmail.com" class="btn btn-primary btn-lg contact-btn d-flex align-items-center justify-content-center gap-3">
-                    <i class="bi bi-envelope-fill fs-4"></i>
-                    <span class="fs-5 fw-semibold">Wyślij e-mail</span>
-                </a>
-                <span class="text-muted small mt-1">tourguide.mariusz@gmail.com</span>
-            </div>
-        </div>
+<div class="row align-items-center g-5">
+<div class="col-lg-6">
+<h3 class="mb-4">Systemy Okayo WT-300D</h3>
+<p class="lead text-muted mb-4">
+Oferuję do wypożyczenia nowoczesne urządzenia tourguide marki <strong>Okayo WT-300D</strong>, idealne dla wycieczek, szkoleń czy konferencji.
+</p>
+<ul class="list-group list-group-flush mb-4">
+<li class="list-group-item bg-transparent px-0 border-bottom-0 mb-2">
+<i class="bi bi-battery-full text-primary-custom me-3 fs-5"></i>
+<strong>Bardzo długi czas pracy:</strong> ponad 35 godzin na jednym ładowaniu.
+</li>
+<li class="list-group-item bg-transparent px-0 border-bottom-0 mb-2">
+<i class="bi bi-broadcast text-primary-custom me-3 fs-5"></i>
+<strong>Bardzo duży zasięg:</strong> ponad 100 metrów stabilnego sygnału.
+</li>
+<li class="list-group-item bg-transparent px-0 border-bottom-0 mb-2">
+<i class="bi bi-shield-check text-primary-custom me-3 fs-5"></i>
+<strong>Gwarancja jakości:</strong> Wszystkie urządzenia są na gwarancji i w doskonałym stanie.
+</li>
+<li class="list-group-item bg-transparent px-0 border-bottom-0 mb-2">
+<i class="bi bi-box-seam text-primary-custom me-3 fs-5"></i>
+<strong>Kompletny zestaw:</strong> Do każdego zestawu dołączam jednorazowe słuchawki, dwa nadajniki, dwa mikrofony oraz kilka odbiorników zapasowych.
+</li>
+</ul>
+</div>
+<div class="col-lg-6">
+<img src="1000017162.jpg" alt="Zestaw audioprzewodników Okayo w walizce" class="img-fluid img-custom">
+</div>
+</div>
+</div>
+</section>
 
-    </main>
+<!-- Kontakt Section -->
+<section id="kontakt" class="section-padding">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="display-6 fw-bold text-primary-custom">Skontaktuj się z nami</h2>
+<div class="mx-auto bg-primary" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+<p class="text-muted mt-3">Masz pytania? Chcesz zarezerwować sprzęt? Napisz bezpośrednio na maila lub zadzwoń!</p>
+</div>
 
-    <!-- Stopka -->
-    <footer class="bg-dark text-white py-4 mt-auto">
-        <div class="container text-center">
-            <p class="mb-0 small text-white-50">&copy; 2026 Tourguide Olsztyn - Mariusz Brzózka. Wszystkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
+<div class="row g-4 justify-content-center">
+<!-- Informacje kontaktowe (bez formularza) -->
+<div class="col-lg-8 col-md-10">
+<div class="card card-custom p-4 p-md-5">
+<div class="card-body text-center d-flex flex-column align-items-center gap-4">
+<div>
+<i class="bi bi-person-badge contact-icon d-block mb-2" style="font-size: 3rem;"></i>
+<h4 class="fw-bold mb-1">Mariusz Brzózka</h4>
+<p class="text-muted mb-0">Właściciel</p>
+</div>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<div>
+<i class="bi bi-telephone contact-icon d-block mb-2" style="font-size: 3rem;"></i>
+<h4 class="fw-bold mb-1">Telefon</h4>
+<p class="mb-0"><a href="tel:+48662122061" class="text-decoration-none text-dark fs-4 fw-semibold">662 122 061</a></p>
+</div>
+
+<div>
+<i class="bi bi-envelope-at contact-icon d-block mb-2" style="font-size: 3rem;"></i>
+<h4 class="fw-bold mb-1">E-mail</h4>
+<p class="mb-0"><a href="mailto:tourguide.mariusz@gmail.com" class="text-decoration-none text-dark fs-4 fw-semibold">tourguide.mariusz@gmail.com</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<p class="mb-0">&copy; <span id="year"></span> Tourguide Olsztyn Mariusz Brzózka. Wszelkie prawa zastrzeżone.</p>
+</div>
+</footer>
+
+<!-- Bootstrap 5 JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Prosty skrypt do aktualizacji roku w stopce -->
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
+</html>
 </html>
